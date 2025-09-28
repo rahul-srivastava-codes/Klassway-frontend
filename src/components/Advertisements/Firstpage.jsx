@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import images from "./images.jsx";
+import { useState } from "react";
 import TypingEffect from "./Typing_effect";
 
 const data = [
@@ -9,17 +8,23 @@ const data = [
   { number: 15, content: "Students Enrolled" },
   { number: 15, content: "Students Enrolled" },
 ];
-
 function Firstpage() {
+  const Image = [
+    "https://plus.unsplash.com/premium_photo-1758726036229-ad770eddad9d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
+    "https://plus.unsplash.com/premium_photo-1758726036229-ad770eddad9d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
+    "https://plus.unsplash.com/premium_photo-1744607693346-5d31a2a15733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDd8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1744607693346-5d31a2a15733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDd8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D",
+  ];
   const [image_num, setimage_num] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setimage_num((prev) => (prev < images.length - 1 ? prev + 1 : 0));
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  setInterval(() => {
+    function i() {
+      image_num != Image.length - 1
+        ? setimage_num(image_num + 1)
+        : setimage_num(0);
+    }
+    i();
+  }, 1000);
 
   return (
     <div className="w-[100vw] py-15 bg-zinc-200 flex items-center flex-col justify-center text-6xl font-extrabold border-b-1">
@@ -29,17 +34,18 @@ function Firstpage() {
       </div>
       <div className="font-light text-2xl text-red-600">
         <TypingEffect
-          text="India's Most Practical Training Platform for B.Tech, BCA, MCA & Diploma Students"
+          text="India's Most Practical Training Platform for B.Tech, BCA, MCA & Diploma
+        Students"
           speed={100}
-        />
+        ></TypingEffect>
       </div>
       <div className="flex items-center justify-between gap-5">
         <div>
           <Component />
         </div>
-        <div className="shadow rounded-lg w-[15vw] h-[25vh] overflow-hidden flex items-center justify-center bg-white">
+        <div className="shadow rounded-lg w-[15vw] h-[25vh] overflow-hidden">
           <img
-            src={images[image_num]}
+            src={Image[image_num]}
             alt="Image Loading"
             className="w-full h-full object-contain"
           />
@@ -51,7 +57,7 @@ function Firstpage() {
 
 function Component() {
   return (
-    <div className="flex flex-wrap items-center justify-center text-xl font-medium gap-5 w-2/3">
+    <div className="flex flex-wrap items-center justify-center text-xl font-medium gap-5 w-2/3  ">
       {data.map((d, i) => (
         <div
           key={i}
