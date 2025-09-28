@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.navbar {
+  background-color: rgb(35, 33, 33);
+  color: azure;
+  border-radius: 5px;
+}
+
+.navbar:hover {
+  background-color: aqua;
+  transition-duration: 800ms;
+  text-decoration-color: rgb(231, 158, 158);
+  color: black;
+  cursor: pointer;
+  border-radius: 10%;
+  transform: scale(1.15);
+}
