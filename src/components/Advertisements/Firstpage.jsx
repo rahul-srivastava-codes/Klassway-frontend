@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import images from "./images";
+import images from "./images.jsx";
 import TypingEffect from "./Typing_effect";
 
 const data = [
