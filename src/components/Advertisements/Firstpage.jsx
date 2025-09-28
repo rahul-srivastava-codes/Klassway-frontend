@@ -15,7 +15,7 @@ function Firstpage() {
 
   setInterval(() => {
     function i() {
-      image_num != Images.length - 1
+      image_num != images.length - 1
         ? setimage_num(image_num + 1)
         : setimage_num(0);
     }
