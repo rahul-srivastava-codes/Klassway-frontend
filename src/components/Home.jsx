@@ -1,6 +1,6 @@
 import { motion, useScroll } from "motion/react";
 import Advertise from "./Advertisements/Advertise";
-import First_page from "./Advertisements/first_page";
+import Firstpage from "./Advertisements/Firstpage";
 import Second_page from "./Advertisements/Second_page";
 import Navbar from "./Navbar";
 import Courses from "./Courses/Courses";
@@ -29,7 +29,7 @@ export default function Home() {
 
       <Navbar></Navbar>
       <div className="overflow-scroll">
-        <First_page />
+        <Firstpage />
         <Courses />
         <Second_page />
         <Alumni />

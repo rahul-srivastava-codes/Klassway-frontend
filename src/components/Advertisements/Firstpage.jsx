@@ -1,4 +1,4 @@
-import Images from "./Images";
+import images from "./images";
 import { useState } from "react";
 import TypingEffect from "./Typing_effect";
 
@@ -9,8 +9,8 @@ const data = [
   { number: 15, content: "Students Enrolled" },
   { number: 15, content: "Students Enrolled" },
 ];
-function First_page() {
-  const image = Images;
+function Firstpage() {
+  const Image = images;
   const [image_num, setimage_num] = useState(0);
 
   setInterval(() => {
@@ -41,7 +41,7 @@ function First_page() {
         </div>
         <div className="shadow rounded-lg w-[15vw] h-[25vh] overflow-hidden">
           <img
-            src={image[image_num]}
+            src={Image[image_num]}
             alt="Image Loading"
             className="w-full h-full object-contain"
           />
@@ -67,4 +67,4 @@ function Component() {
   );
 }
 
-export default First_page;
+export default Firstpage;
